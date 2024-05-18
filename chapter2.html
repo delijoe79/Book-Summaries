@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Strangers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background-color: #1e1e1e;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+        .summary {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .image {
+            width: calc(33.333% - 20px);
+            background-color: #2e2e2e;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .caption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #cccccc;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            text-align: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 2: Strangers</h1>
+        <div class="summary">
+            <p>In Chapter 2, titled "Strangers," the narrative picks up with the preparations for the Bel Tine festival in full swing. Rand and Mat are helping to move barrels through the common room of the inn. The innkeeper, Master al’Vere, is already busy, and the atmosphere is warm and bustling despite the cold outside. Members of the Village Council, including the blacksmith and the miller, are gathered in the inn, engaged in serious and silent discussions, indicating the underlying worries that have gripped the village.</p>
+            <p>As Rand and Mat go about their tasks, they encounter Mistress al’Vere, who offers them honeycakes, reminding Rand of his hunger. The cellar beneath the inn is filled with casks of brandy, cider, ale, and wine, emphasizing the inn's role as a central hub for the village's social life.</p>
+            <p>The chapter takes a turn when Ewin, a younger boy, bursts in with news of strangers in the village. These strangers are unlike any the villagers have seen before. One is a woman dressed in fine clothes that seem to change color, exuding an air of mystery and command. The other is a tall man who moves with the grace and alertness of a wolf, possibly a warrior or guard. The villagers, especially the boys, are both fascinated and unnerved by these newcomers.</p>
+            <p>Rand and Mat's curiosity leads them to encounter the woman, who introduces herself as Moiraine, and the man, who is referred to as Lan. Moiraine gives the boys coins, asking them to assist her with small tasks during her stay. The chapter ends with the arrival of the peddler, adding to the excitement and anticipation of the Bel Tine festival, which promises to be unforgettable with the presence of the strangers and a gleeman.</p>
+        </div>
+        <div class="images">
+            <div class="image">
+                <img src="ch2-1.png" alt="Scene 1: The Common Room of the Inn">
+                <div class="caption">The Common Room of the Inn</div>
+            </div>
+            <div class="image">
+                <img src="ch2-2.png" alt="Scene 2: Encounter with the Strangers">
+                <div class="caption">Encounter with the Strangers</div>
+            </div>
+            <div class="image">
+                <img src="ch2-3.png" alt="Scene 3: The Raven on the Roof">
+                <div class="caption">The Raven on the Roof</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for image zoom -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the modal image element
+        var modalImg = document.getElementById("img01");
+
+        // Get all images in the document
+        var images = document.querySelectorAll(".image img");
+
+        // Loop through all images to add click event
+        images.forEach(image => {
+            image.addEventListener("click", function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                modalImg.style.width = "90%"; // Set the modal image width to 90%
+                modalImg.style.height = "auto"; // Maintain aspect ratio
+            });
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
