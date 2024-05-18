@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prologue</title>
+    <title>Eye of the World Chapter Summaries</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,138 +11,74 @@
             padding: 20px;
             background-color: #121212;
             color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .container {
             max-width: 1200px;
-            margin: auto;
+            width: 100%;
             background-color: #1e1e1e;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         h1 {
-            text-align: center;
             color: #ffffff;
-        }
-        .summary {
             margin-bottom: 30px;
         }
-        .images {
+        .chapter-links {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
         }
-        .image {
-            flex: 1 1 calc(33.333% - 20px);
+        .chapter {
+            width: calc(50% - 20px);
+            background-color: #2e2e2e;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
             text-align: center;
+            margin-bottom: 20px;
         }
-        .image img {
+        .chapter img {
             width: 100%;
             height: auto;
-            display: block;
-            cursor: pointer;
         }
-        .caption {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #cccccc;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-            text-align: center;
-        }
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-            width: auto;
-            height: auto;
-        }
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
+        .chapter h2 {
             color: #ffffff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
+            margin: 10px 0;
         }
-        .close:hover,
-        .close:focus {
-            color: #bbb;
+        .chapter a {
+            color: #ffffff;
             text-decoration: none;
-            cursor: pointer;
+            display: block;
+            padding: 10px;
+            background-color: #3e3e3e;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .chapter a:hover {
+            background-color: #5e5e5e;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Prologue</h1>
-        <div class="summary">
-            <p>The prologue of the story, titled "Dragonmount," sets a somber and dramatic tone with its vivid descriptions of a devastated palace. The earth occasionally trembles as if in denial of the catastrophic events that have transpired. The palace is a scene of desolation, with scorch marks, debris, and the bodies of men, women, and children lying everywhere, victims of elemental forces. Amidst this destruction, masterworks of art and finely carved furnishings remain eerily undisturbed.</p>
-            <p>Lews Therin Telamon, a tall man with hair more white than brown, wanders the palace in a state of madness, calling out for his wife, Ilyena. His once-regal clothes are now torn and dirty, and he barely recognizes himself. As he stumbles through the ruins, he encounters a man dressed in black, Elan Morin Tedronai, also known as the Betrayer of Hope. Elan Morin taunts Lews Therin, calling him the Dragon and foretelling that history will remember him as the Kinslayer.</p>
-            <p>Elan Morin reveals that Lews Therin's madness and the destruction around them are the results of his own actions, driven by the taint on the male half of the One Power. In a cruel act, Elan Morin heals Lews Therin’s mind, forcing him to realize that he has killed everyone he loved, including his wife and children. Overwhelmed by grief and guilt, Lews Therin flees to a remote location and begs for forgiveness. He draws deeply from the True Source, and in a final, desperate act, channels a massive amount of the One Power, creating a cataclysmic explosion that forms the mountain known as Dragonmount.</p>
-            <p>Elan Morin, witnessing the event from afar, declares that their struggle is far from over and that it will continue until the end of time. The prologue ends with a prophecy foretelling the return of the Dragon, the Promised One who will fight against the Dark.</p>
-        </div>
-        <div class="images">
-            <div class="image">
-                <img src="pro1.png" alt="Scene 1: Destruction in the Palace">
-                <div class="caption">Destruction in the Palace</div>
+        <h1>Eye of the World Chapter Summaries</h1>
+        <div class="chapter-links">
+            <div class="chapter">
+                <img src="pro1.png" alt="Prologue Thumbnail">
+                <h2>Prologue</h2>
+                <a href="prologue.html">Read Summary</a>
             </div>
-            <div class="image">
-                <img src="pro2.png" alt="Scene 2: Confrontation with Elan Morin">
-                <div class="caption">Confrontation with Elan Morin</div>
+            <div class="chapter">
+                <img src="ch1-1.png" alt="Chapter 1 Thumbnail">
+                <h2>Chapter 1</h2>
+                <a href="chapter1.html">Read Summary</a>
             </div>
-            <div class="image">
-                <img src="pro3.png" alt="Scene 3: Creation of Dragonmount">
-                <div class="caption">Creation of Dragonmount</div>
-            </div>
+            <!-- Add more chapters as needed using the same structure -->
         </div>
     </div>
-
-    <!-- Modal for image zoom -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-    </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the modal image element
-        var modalImg = document.getElementById("img01");
-
-        // Get all images in the document
-        var images = document.querySelectorAll(".image img");
-
-        // Loop through all images to add click event
-        images.forEach(image => {
-            image.addEventListener("click", function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                modalImg.style.width = (this.width * 2) + "px"; // Double the width
-                modalImg.style.height = "auto"; // Maintain aspect ratio
-            });
-        });
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-    </script>
 </body>
 </html>
