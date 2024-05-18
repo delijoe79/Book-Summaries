@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Empty Road</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: #1e1e1e;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+        .summary {
+            margin-bottom: 30px;
+        }
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .image {
+            flex: 1 1 calc(33.333% - 20px);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+        .caption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #cccccc;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            text-align: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>An Empty Road</h1>
+        <div class="summary">
+            <p>In Chapter 1, titled "An Empty Road," the story begins with a description of the eternal turning of the Wheel of Time. The narrative focuses on Rand al'Thor and his father, Tam, as they travel down the Quarry Road to Emond's Field. Despite it being spring, the weather is cold and unwelcoming, matching the mood of the land. As they journey, Rand feels a mysterious and unsettling presence, which is later revealed to be a cloaked figure on a black horse. The figure exudes a palpable sense of hatred, and its cloak does not move in the wind, adding to the eeriness.</p>
+            <p>Rand is unnerved by the figure but tries to dismiss it as a product of his imagination. They reach Emond's Field, where preparations for the Bel Tine festival are underway. The village is busy with people cleaning and setting up for the festival. Tam and Rand stop to talk with villagers, and it is clear that the harsh winter has left everyone worried about the future.</p>
+            <p>Rand encounters his friend Mat Cauthon, who reveals he has also seen the mysterious cloaked figure. Both boys admit to feeling an inexplicable fear and sense of malevolence from the rider. They are both unsure of what to make of it but decide to keep a watchful eye.</p>
+            <p>The chapter sets the stage for the story, introducing the main characters, the setting of the Two Rivers, and hinting at the larger, darker forces at play. It emphasizes the themes of mystery, fear, and the ominous presence of evil lurking in the background.</p>
+        </div>
+        <div class="images">
+            <div class="image">
+                <img src="ch1-1.png" alt="Scene 1: Rand and Tam on the Quarry Road">
+                <div class="caption">Rand and Tam on the Quarry Road</div>
+            </div>
+            <div class="image">
+                <img src="ch1-2.png" alt="Scene 2: The Mysterious Rider">
+                <div class="caption">The Mysterious Rider</div>
+            </div>
+            <div class="image">
+                <img src="ch1-3.png" alt="Scene 3: Arrival at Emond's Field">
+                <div class="caption">Arrival at Emond's Field</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for image zoom -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the modal image element
+        var modalImg = document.getElementById("img01");
+
+        // Get all images in the document
+        var images = document.querySelectorAll(".image img");
+
+        // Loop through all images to add click event
+        images.forEach(image => {
+            image.addEventListener("click", function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                modalImg.style.width = "90%"; // Set the modal image width to 90%
+                modalImg.style.height = "auto"; // Maintain aspect ratio
+            });
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
